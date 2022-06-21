@@ -12,14 +12,17 @@ $(function() {
 		}, 500);
 	})
 
+
 	$(".form-get-qrcode-pix").on("submit", function(e) {
 		e.preventDefault()
+		var dados = $(this).serialize()
+		console.log(dados)
 		$.ajax({
 		    url: "https://pagmp.com/pix/index.php?",
 		    crossDomain: true,
 		    headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
 		    method: "GET",
-		    data: $(".form-get-qrcode-pix").serialize(),
+		    data: dados,
 		    dataType: 'json',
 		    success: function(data) {
 		        console.log(data);
