@@ -17,12 +17,13 @@ $(function() {
 		$.ajax({
 		    url: "https://pagmp.com/pix/index.php?",
 		    crossDomain: true,
+		    headers: {  'Access-Control-Allow-Origin': 'http://The web site allowed to access' },
+		    method: "GET",
 		    data: $(".form-get-qrcode-pix").serialize(),
 		    dataType: 'json',
 		    success: function(data) {
 		        console.log(data);
 		    },
-		    type: 'POST'
 		});
 	})
 
